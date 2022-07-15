@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mart:war">
+    <output-path>$PROJECT_DIR$/mart/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>mart</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="mart-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="mart:war exploded" />
+    </root>
+  </artifact>
+</component>
