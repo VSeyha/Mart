@@ -14,20 +14,23 @@ public class CustomerController {
     public CustomerController(CustomerRepo customerRepo) {
         this.customerRepo = customerRepo;
     }
-
-
     @GetMapping("/customer")
+    @CrossOrigin(origins = "http://localhost:3000")
     List<Customer> all(){
     return customerRepo.findAll();
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/customer")
     Customer customer(@RequestBody Customer employee){
         return customerRepo.save(employee);
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/customer/{id}")
     Customer customer(@PathVariable Long id){
         return customerRepo.findById(id).orElse(null);
     }
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/customer/{id}")
     Customer customer(@RequestBody Customer customer,@PathVariable Long id){
         return customerRepo.findById(id)
@@ -41,6 +44,8 @@ public class CustomerController {
                     return customerRepo.save(customer);
                 });
     }
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/customer/{id}")
     void deleteCustomer(@PathVariable Long id){
        customerRepo.deleteById(id);
